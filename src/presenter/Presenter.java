@@ -7,25 +7,33 @@ import model.ServiceSale;
 
 public class Presenter {
 	
-	private ServiceSale serviceSale;
+	private ServiceSale serviceSale; 
 
 	public Presenter() {
+	
 	}
-	
-	
-	
-	public double addSale(String name, double value, int stock, boolean iva,ETypeProduct eTypeProduct,int cont ) throws Exception {
-		
-		Product product = new Product(name, value, stock, iva, eTypeProduct);
-		
-		ServiceSale serviceSale = new ServiceSale(product, cont);
-		
-		return value;
+
+	public double addSale(String name, double value, int stock, boolean iva,ETypeProduct eTypeProduct,int cont ){
+		try { 
+			this.serviceSale = new ServiceSale(new Product(name, value, stock, iva, eTypeProduct), cont);
+			return serviceSale.getSale().getTotalSale();	 
+		} catch (Exception e) {
+			e.getLocalizedMessage();
+			return 0.0; 
+		}
 	}
 	public String showSale() {
 		
-		return "el total de la compra /n"+serviceSale.getSale().getTotalSale()+" total agrabado /n "+ serviceSale.getSale().calcIva() ; 
+		return "total: "+serviceSale.getSale().getTotalSale()+"\n iva: "+ serviceSale.getSale().calcIva() + "\n descuento: "+ serviceSale.getSale().calcDiscount() ; 
+	}
+
+	public ServiceSale getServiceSale() { 
+		return serviceSale;
 	}
 
 
+
+	public void setServiceSale(ServiceSale serviceSale) {
+		this.serviceSale = serviceSale;
+	}
 }

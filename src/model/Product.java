@@ -33,7 +33,7 @@ public class Product {
 		this.iva = iva;
 	}
 	public void seteTypeProduct(ETypeProduct eTypeProduct) {
-		this.eTypeProduct = eTypeProduct;
+		this.eTypeProduct = eTypeProduct; 
 	}
 	
 	
@@ -44,7 +44,11 @@ public class Product {
 		return value;
 	}
 	public int getStock() {
-		return stock;
+		
+		if (stock >= STOCK_MIN) {
+			return stock;
+		}
+		return 0;
 	}
 	public boolean isIva() {
 		return iva;
@@ -53,11 +57,10 @@ public class Product {
 		return eTypeProduct;
 	}
 	
-	
 	@Override
 	public String toString() {
 		return "Product [name=" + name + ", value=" + value + ", stock=" + stock + ", iva=" + iva + "]";
 	}
-	
+
 
 }

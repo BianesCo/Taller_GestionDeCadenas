@@ -5,11 +5,11 @@ public class Sale {
 	private Product produc;
 	private int cont;
 	
-	public Sale(Product produc, int cont) {
+	public Sale(Product produc, int cont) { 
 		this.produc = produc;
 		this.cont = cont;
 	}
-
+ 
 	public Product getProduc() {
 		return produc;
 	}
@@ -19,18 +19,21 @@ public class Sale {
 	}
 
 	public int getCont() {
-		return cont;
+		if (cont <= produc.getStock()) {
+			return cont;
+		}
+		return 0;
 	}
 
 	public void setCont(int cont) {
 		this.cont = cont;
 	}
-	
+
 	public double calcDiscount() {
 		
 		double discount=0;
 		if (cont<5 && cont>0) {
-			return	produc.getValue();
+			discount = 0;
 		}else if (cont >=5 && cont <= 10) {
 		   discount = (produc.getValue()* cont)*0.05;
 			
@@ -43,11 +46,10 @@ public class Sale {
 		}else if(cont>=50) {
 			discount = (produc.getValue()*cont )* 0.3;
 		}
-		return (produc.getValue()*cont)- discount;
+		return  discount;
 	}
 	public double getTotalSale() {
-		
-		return (int)(calcDiscount()+calcIva());
+		return (produc.getValue()* cont)- calcDiscount() + calcIva(); 
 	}
 	
 	public double calcIva() {
@@ -56,19 +58,19 @@ public class Sale {
 			
 			double calIva = switch(produc.geteTypeProduct()) {
 			
-			case LICORES -> calcDiscount() * 0.19;
+			case LICORES -> (produc.getValue()* cont)* 0.19;
 			
-			case VIVERES -> calcDiscount() * 0.08;
+			case VIVERES -> (produc.getValue()* cont) * 0.08;
 			
-			case MEDICINAS -> calcDiscount();
+			case MEDICINAS -> produc.getValue()* cont;
 			
-			case ASEO -> calcDiscount() * 0.14;
+			case ASEO -> (produc.getValue()* cont) * 0.14;
 			
-			case RANCHO -> calcDiscount() * 0.19;
+			case RANCHO -> (produc.getValue()* cont)* 0.19;
 			
-			default -> 0.0;
+			default -> 0.0; 
 			};
-			return calIva;
+			return Math.round(calIva); 
 		}
 		return 0;
 		

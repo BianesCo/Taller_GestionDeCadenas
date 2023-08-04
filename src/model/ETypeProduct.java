@@ -1,6 +1,6 @@
 package model;
 
-public enum ETypeProduct {
+public enum ETypeProduct { 
 	
 	LICORES,
 	
@@ -12,6 +12,5 @@ public enum ETypeProduct {
 	
 	RANCHO,
 	
-
 }
 

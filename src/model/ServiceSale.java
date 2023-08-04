@@ -1,27 +1,25 @@
 package model;
 
 public class ServiceSale {
-	
-	
-	private Sale Sale;
-	
-	public ServiceSale(Product produc, int cont) throws Exception {
-		try {
+
+	private Sale sale;
+
+	public ServiceSale(Product product, int cont) throws Exception {
+		if (cont > product.getStock()) { 
 			
-		} catch (Exception e) {
-			// TODO: handle exception
-			throw new Exception("error",e);
+			this.sale = new Sale(product, cont); 
 		}
-		
+		this.sale = new Sale(product, cont);
+				
+	
 	}
 
 	public Sale getSale() {
-		return Sale;
+		return sale;
 	}
 
 	public void setSale(Sale sale) {
-		Sale = sale;
+		this.sale = sale;
 	}
-	
- 
-}
+
+} 
