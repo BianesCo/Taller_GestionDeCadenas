@@ -1,5 +1,8 @@
 package model;
 
+/*
+ * 
+ */
 public class Sale {
 	
 	private Product produc;
@@ -28,7 +31,10 @@ public class Sale {
 	public void setCont(int cont) {
 		this.cont = cont;
 	}
-
+	/*
+	 * metodo que calcula el descuento dependiendo de la cantidad de productos que se compren 
+	 * @reture El descuento al o los productos comprados
+	 */
 	public double calcDiscount() {
 		
 		double discount=0;
@@ -47,11 +53,18 @@ public class Sale {
 			discount = (produc.getValue()*cont )* 0.3;
 		}
 		return  discount;
-	}
+	}// Cierre del metodo
+	/*
+	 * Método que devuelve el precio total del producto con el descuento y el iva
+	 * @reture el precio total del producto
+	 */
 	public double getTotalSale() {
 		return (produc.getValue()* cont)- calcDiscount() + calcIva(); 
-	}
-	
+	}//Cierre de metodo 
+	/*
+	 * Método que devuelve el calculo del iva segun los parametros dados
+	 * @reture El valor del iva 
+	 */
 	public double calcIva() {
 		
 		if (produc.isIva()== true) {
@@ -74,7 +87,7 @@ public class Sale {
 		}
 		return 0;
 		
-	} 
+	} // Cierre del metodo 
 	
 
 }

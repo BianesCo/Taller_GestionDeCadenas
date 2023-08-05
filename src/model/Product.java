@@ -1,14 +1,18 @@
 package model;
+/**
+ * Esta clase optiene y asigna los atributos que llegan del main
+ * @author:Bibian Corredor 
+ */
 
 public class Product {
-	
+	// Atributos 
 	private String name;
 	private double value;
 	private int stock;
 	private boolean iva;
-	public static final int STOCK_MIN=10;
 	private ETypeProduct eTypeProduct;
-	
+	//Atributo statico
+	public static final int STOCK_MIN=10;
 	
 	public Product(String name, double value, int stock, boolean iva, ETypeProduct eTypeProduct) {
 		super();
@@ -43,13 +47,16 @@ public class Product {
 	public double getValue() {
 		return value;
 	}
-	public int getStock() {
+	/**
+	 * Metodo que devuelve la cantidad de productos que hay, pero solo si es mayor a la cantidad de productos minimos 
+	 */
+	public int getStock() { 
 		
 		if (stock >= STOCK_MIN) {
 			return stock;
 		}
 		return 0;
-	}
+	}// Cierre de metodo 
 	public boolean isIva() {
 		return iva;
 	}

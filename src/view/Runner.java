@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import model.ETypeProduct;
 import model.Product;
-import model.ServiceSale;
 import presenter.Presenter;
 
 public class Runner {
