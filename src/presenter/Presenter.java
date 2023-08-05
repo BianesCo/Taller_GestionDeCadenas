@@ -35,6 +35,6 @@ public class Presenter {
 
 
 	public void setServiceSale(ServiceSale serviceSale) {
-		this.serviceSale = serviceSale;
+		this.serviceSale = serviceSale; 
 	}
 }

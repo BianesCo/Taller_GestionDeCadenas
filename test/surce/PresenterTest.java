@@ -29,7 +29,7 @@ public class PresenterTest {
 		
 		assertEquals(47840.0, presenter.addSale("jabon rey", 2300, 20, true, ETypeProduct.ASEO, 20),0.1); 
 		
-		
+		 
 	}
 }
  

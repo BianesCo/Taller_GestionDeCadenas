@@ -25,7 +25,7 @@ public class ServiceSaleTest {
 		  try {
 			serviceSale = new ServiceSale(soap, 15);
 			Sale sale = serviceSale.getSale();
-			assertEquals("jabon rey", serviceSale.getSale().getProduc().getName());
+			assertEquals("jabon rey", serviceSale.getSale().getProduc().getName()); 
 			assertEquals(15, soap.getStock());
 			assertEquals(15, sale.getCont());
 			

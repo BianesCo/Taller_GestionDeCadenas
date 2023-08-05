@@ -8,6 +8,9 @@ public class ServiceSale {
 		if (cont > product.getStock()) { 
 			throw new Exception(" productos insuficientes");
 			//this.sale = new Sale(product, cont); 
+		}else if (cont < 0) {
+			
+			throw new Exception(" productos insuficientes");
 		}
 		this.sale = new Sale(product, cont);
 				
