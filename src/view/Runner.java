@@ -110,7 +110,7 @@ public class Runner {
 				 double average = counterTotalValue/numberShopping;
 				 
 				 System.out.println("\n\n Thanks for your shopping \n"
-		         		+ "\n Shopping total: "+counterTotalValue+"\n Average:"+ average);
+		         		+ "\n Shopping total: "+counterTotalValue+"\n Average:"+ Math.round(average));
 				 
 			} catch (Exception e) {
 				// TODO: handle exception
