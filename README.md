@@ -1,14 +1,14 @@
 # Starting 
-This is an individual project for the Computer and Systems Engineering degree at the University (UPTC) Colombia.
+This is a group project for the Computer and Systems Engineering degree at the University (UPTC) of Colombia.
 ## Description
-This project works for a supermarket where the user can buy the given products in a menu and he will receive an invoice for his purchase.
+Based on the BlueJ figures project, the classes were redesigned applying elements of inheritance (interfaces, abstract classes) to optimize the functionality of the project.This project works for the selected figure to do some actions that are proposed
 ## Prerequisites
  - [Programming language Java]()
  - [Version Java 17]()
  - [Object Oriented Programming (OOP)]()
  - [Editor Eclipse]()
- - [Java Extension Pack]()
- - [Java Test Runner]()
 ## Author's data
-- Name: Bibian Jinnary Corredor Corredor 
-- Status: currently a computer and systems engineering student
+- Names:
+   - Bibian Jinnary Corredor Corredor
+   - Juan David Fernandez Riapira
+- Status: currently studying computer and systems engineering
